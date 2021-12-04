@@ -1,16 +1,19 @@
 import React from "react";
-import { Card, Header } from "./components";
-import content from "./helpers/data";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import { Header } from "./components";
+import Admin from "./pages/Admin";
+import AproveCompanies from "./pages/AproveCompanies";
+
 function App() {
   return (
-    <>
+    <Router>
       <Header />
-      <section className={"grid gap-20 px-3 py-20"}>
-        {content.map((card) => (
-          <Card title={card.title} status={card.status} img={card.img} />
-        ))}
-      </section>
-    </>
+      <Routes>
+        <Route path="/" element={<Admin />} />
+        <Route path="/aprobacion-empresas" element={<AproveCompanies />} />
+      </Routes>
+    </Router>
   );
 }
 

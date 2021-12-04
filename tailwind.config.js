@@ -17,6 +17,7 @@ module.exports = {
           languid: "#CBCEDD",
           gdm: "#E5E7EB",
           dust: "#9A9A9A",
+          smokey: "#727171",
         },
       },
       fontFamily: {
@@ -24,6 +25,10 @@ module.exports = {
       },
       backgroundImage: (theme) => ({
         "clock-icon": "url('assets/icons/clock.svg')",
+        "next-arrow-icon": "url('assets/icons/next-arrow.svg')",
+        "prev-arrow-icon": "url('assets/icons/prev-arrow.svg')",
+        "check-green-icon": "url('assets/icons/check-green.svg')",
+        "reject-red-icon": "url('assets/icons/reject.svg')",
       }),
       gridTemplateColumns: {
         cards: "95px 3fr",

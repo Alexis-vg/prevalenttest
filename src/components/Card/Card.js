@@ -1,8 +1,21 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import companies from "../../db/companies";
 
-const Card = ({ title, status, img }) => {
+const Card = ({ id, title, status, img }) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/aprobacion-empresas`);
+  };
+
   return (
-    <article className={"relative bg-white-pure card-shadow rounded-lg h-44"}>
+    <article
+      onClick={handleClick}
+      className={
+        "relative bg-white-pure card-shadow rounded-lg h-44 cursor-pointer"
+      }
+    >
       <section className={"grid grid-cols-cards "}>
         <figure
           className={
