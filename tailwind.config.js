@@ -16,12 +16,18 @@ module.exports = {
           secondary: "#9A9A9A",
           languid: "#CBCEDD",
           gdm: "#E5E7EB",
+          dust: "#9A9A9A",
         },
       },
       fontFamily: {
         Roboto: ["Roboto", "sans-serif"],
       },
-
+      backgroundImage: (theme) => ({
+        "clock-icon": "url('assets/icons/clock.svg')",
+      }),
+      gridTemplateColumns: {
+        cards: "95px 3fr",
+      },
       screens: {
         vs: "375px",
         "500media": "500px",
@@ -87,6 +93,7 @@ module.exports = {
       125: "1.25rem",
     },
   },
+
   variants: {
     extend: {
       fontWeight: ["hover", "focus", "group-focus"],
