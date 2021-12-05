@@ -1,4 +1,3 @@
-import React from "react";
 import content from "../helpers/data";
 
 import { Card } from "../components";
@@ -10,15 +9,20 @@ const Admin = () => {
         "grid grid-cols-1 gap-20 px-3 py-20 2xl:grid-cols-2 2xl:gap-20 2xl:px-32"
       }
     >
-      {content.map((card) => (
-        <Card
-          key={card.id}
-          id={card.id}
-          title={card.title}
-          status={card.status}
-          img={card.img}
-        />
-      ))}
+      {content.map((card, index) => {
+        const { id, title, status, img } = card;
+
+        return (
+          <Card
+            index={index}
+            key={id}
+            id={id}
+            title={title}
+            status={status}
+            img={img}
+          />
+        );
+      })}
     </section>
   );
 };

@@ -37,6 +37,7 @@ module.exports = {
         "anonymous-profile-icon": "url('assets/icons/anonymous-profile.svg')",
         "down-arrow-white-icon": "url('assets/icons/down-arrow.svg')",
         "notification-red-icon": "url('assets/icons/notification-icon.svg')",
+        "clipper-icon": "url('assets/icons/clipper-icon.svg')",
       }),
       gridTemplateColumns: {
         cards: "95px 3fr",

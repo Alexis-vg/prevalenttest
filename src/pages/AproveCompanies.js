@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import { CTAs, DataCompany } from "../components";
+import { Buttons, CTAs, DataCompany, ReactLoader } from "../components";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
@@ -34,33 +34,32 @@ const AproveCompanies = () => {
     setLoading(false);
   }, []);
   if (loading) {
-    return <h1>loading</h1>;
+    return (
+      <div className="mt-48">
+        <ReactLoader />
+      </div>
+    );
   }
   return (
-    <div>
-      <section className={""}>
-        <h1 className={"text-black text-sm my-9 ml-3"}>
-          <Link to="/" className={"text-blue-gdm text-sm"}>
-            Administración
-          </Link>{" "}
-          / Aprobación de Empresas
-        </h1>
-        <div className={"flex justify-between items-center my-9 mx-2"}>
-          <button
-            onClick={prevPage}
-            className={"w-9 h-9 bg-center bg-contain bg-prev-arrow-icon"}
-          />
-          <p className={"opacity-75 text-sm"}>
-            Empresa {increment + 1} de {companies.length} pendiente por
-            aprovación
-          </p>
-          <button
-            onClick={nextPage}
-            className={"w-9 h-9 bg-center bg-contain bg-next-arrow-icon"}
-          />
-        </div>
-      </section>
-      <DataCompany {...company} status={status} />
+    <div className={"grid"}>
+      <h1 className={"text-black text-sm my-9 ml-3 2xl:text-2xl 2xl:ml-12"}>
+        <Link to="/" className={"text-blue-gdm text-sm 2xl:text-2xl"}>
+          Administración
+        </Link>{" "}
+        / Aprobación de Empresas
+      </h1>
+      <Buttons
+        prevPage={prevPage}
+        nextPage={nextPage}
+        increment={increment}
+        companies={companies}
+      />
+      <DataCompany
+        {...company}
+        status={status}
+        setStatus={setStatus}
+        id={company._id}
+      />
       <CTAs setStatus={setStatus} id={company._id} />
     </div>
   );

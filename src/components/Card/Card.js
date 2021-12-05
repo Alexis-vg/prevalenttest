@@ -1,10 +1,13 @@
 import { useNavigate } from "react-router-dom";
 
-const Card = ({ title, status, img }) => {
+const Card = ({ title, status, img, index }) => {
+  console.log(index);
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(`/aprobacion-empresas`);
+    if (index === 0) {
+      navigate(`/aprobacion-empresas`);
+    }
   };
 
   return (
