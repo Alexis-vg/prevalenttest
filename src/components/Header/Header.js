@@ -21,20 +21,27 @@ const Header = () => {
           </h1>
         </section>
         <div className={"relative hidden 2xl:block"}>
-          <input className={"bg-red-500 py-1 px-3"} type="text" />
+          <input className={"bg-transparent py-1 px-3"} type="text" />
           <span className={"absolute top-1 left-2 text-white-pure"}>
             <i className="inline-block bg-spyglass-white-icon w-5 h-5 bg-no-repeat align-bottom"></i>{" "}
             Buscar...
           </span>
         </div>
         <ul className={"hidden 2xl:flex w-2/4 justify-between items-center"}>
-          <li className={"text-white-pure"}>
+          <li className={"relative inline-block text-white-pure"}>
             <span
               className={
                 " inline-block w-6 h-5 bg-gear-white-icon align-top bg-center mr-3"
               }
             />
             Administracion
+            <div
+              className={
+                "absolute -top-2 -right-6 flex justify-center items-center rounded-full bg-red-500 h-5 w-5"
+              }
+            >
+              <p className={"p-2"}>2</p>
+            </div>
           </li>
           <li className={"text-white-pure"}>
             <span

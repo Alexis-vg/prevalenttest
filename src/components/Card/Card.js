@@ -11,24 +11,28 @@ const Card = ({ title, status, img }) => {
     <article
       onClick={handleClick}
       className={
-        "relative bg-white-pure card-shadow rounded-lg h-44 cursor-pointer"
+        "relative bg-white-pure card-shadow rounded-lg h-44 2xl:h-96 cursor-pointer"
       }
     >
-      <section className={"grid grid-cols-cards "}>
+      <section className={""}>
         <figure
           className={
-            "absolute col-start-1 col-end-2 -top-6 left-4 flex p-2 bg-blue-gdm w-16 h-16 rounded-lg card-shadow "
+            "absolute -top-7 left-4 flex p-2 bg-blue-gdm w-16 h-16 rounded-lg card-shadow 2xl:w-28 2xl:h-28 2xl:ml-4"
           }
         >
           <img src={img} alt={title} />
         </figure>
-        <h1 className={"col-start-2 col-end-3 my-3 mr-7 font-normal text-2xl"}>
+        <h1
+          className={
+            "ml-24 mr-2 mt-2 font-normal text-2xl 2xl:text-4xl 2xl:mt-32 2xl:ml-8"
+          }
+        >
           {title}
         </h1>
       </section>
       <footer
         className={
-          "absolute bottom-0 w-full text-gray-dust py-2 px-4 text-xs font-normal border-gray-languid border-t-2"
+          "absolute bottom-0 w-full text-gray-dust py-2 px-4 text-xs font-normal border-gray-languid border-t-2 2xl:text-sm 2xl:py-7 2xl:pl-8"
         }
       >
         <i
