@@ -1,5 +1,3 @@
-import React, { useRef, useState } from "react";
-
 import Logo from "../../assets/icons/logo.svg";
 import Menu from "../../assets/icons/burguer-menu.svg";
 

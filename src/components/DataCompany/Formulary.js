@@ -1,4 +1,11 @@
-const Formulary = ({ id, name, businessName, NIT, employees, status }) => {
+const Formulary = ({
+  identification,
+  name,
+  businessName,
+  NIT,
+  employees,
+  status,
+}) => {
   return (
     <div className={"mt-7"}>
       <label className={"text-sm opacity-70 block"}>Nombre de la empresa</label>
@@ -12,10 +19,15 @@ const Formulary = ({ id, name, businessName, NIT, employees, status }) => {
       </label>
       <p className={"font-bold text-base uppercase mb-14 border-b-2"}>{NIT}</p>
       <label className={"text-sm opacity-70 block"}>Identificación</label>
-      <p className={"font-bold text-base uppercase mb-14 border-b-2"}>{id}</p>
+      <p className={"font-bold text-base uppercase mb-14 border-b-2"}>
+        {identification}
+      </p>
       <label className={"text-sm opacity-70 block"}># de empleados</label>
       <p className={"font-bold text-base uppercase mb-14 border-b-2"}>
         {employees}
+      </p>
+      <p className={"font-bold text-base uppercase mb-14 border-b-2"}>
+        {status}
       </p>
     </div>
   );

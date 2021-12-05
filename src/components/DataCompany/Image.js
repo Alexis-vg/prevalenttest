@@ -2,7 +2,7 @@ import React from "react";
 
 const Image = ({ logo }) => {
   return (
-    <figure className="w-full h-64 ">
+    <figure className="w-full h-64">
       <img
         src={logo}
         alt=""

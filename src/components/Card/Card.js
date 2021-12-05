@@ -1,8 +1,6 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
-import companies from "../../db/companies";
 
-const Card = ({ id, title, status, img }) => {
+const Card = ({ title, status, img }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {

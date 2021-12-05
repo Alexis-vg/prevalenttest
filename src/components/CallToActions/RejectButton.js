@@ -1,8 +1,14 @@
-import React from "react";
+import axios from "axios";
 
-const RejectButton = () => {
+const RejectButton = ({ setStatus, id }) => {
+  const rejectCompany = async () => {
+    await axios.put(`http://localhost:8080/api/companies/${id}`, {
+      status: "rejected",
+    });
+    setStatus("rejected");
+  };
   return (
-    <button>
+    <button onClick={rejectCompany}>
       <h1 className="font-bold text-lg bg-white-pure rounded-2xl card-shadow py-2 px-5 pr-8">
         {" "}
         <span

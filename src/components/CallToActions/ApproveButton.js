@@ -1,16 +1,13 @@
+import axios from "axios";
 import React from "react";
-import companies from "../../db/companies";
 
-const ApproveButton = ({ id }) => {
-  const approveCompany = () => {
-    const updatedCompanies = companies.map((company) => {
-      if (company.id === id) {
-        return { ...company, status: "approved" };
-      } else {
-        return company;
-      }
+const ApproveButton = ({ setStatus, id }) => {
+  const approveCompany = async () => {
+    const res = await axios.put(`http://localhost:8080/api/companies/${id}`, {
+      status: "approved",
     });
-    console.log(updatedCompanies);
+    setStatus("approved");
+    console.log(res);
   };
   return (
     <button onClick={approveCompany} className={"my-10 cursor-pointer"}>
