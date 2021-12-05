@@ -2,7 +2,6 @@ import { useState } from "react";
 import "react-responsive-modal/styles.css";
 import { Modal } from "react-responsive-modal";
 import { Documents } from "..";
-import AttachedFiles from "./AttachedFiles";
 import Formulary from "./Formulary";
 import Image from "./Image";
 import ApproveButton from "../CallToActions/ApproveButton";
@@ -36,7 +35,7 @@ const DataCompany = ({ logo, setStatus, id, ...rest }) => {
         </div>
       </Modal>
       <Image logo={logo} />
-      <Formulary {...rest} />
+      <Formulary {...rest} onOpenModal={onOpenModal} />
       <h2 className={"font-bold text-lg 2xl:hidden"}>Documentos cargados</h2>
       <div className="2xl:hidden">
         <Documents {...rest} />
@@ -49,8 +48,6 @@ const DataCompany = ({ logo, setStatus, id, ...rest }) => {
         <ApproveButton setStatus={setStatus} id={id} />
         <RejectButton setStatus={setStatus} id={id} />
       </div>
-
-      <AttachedFiles onOpenModal={onOpenModal} />
     </div>
   );
 };

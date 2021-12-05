@@ -1,9 +1,12 @@
+import AttachedFiles from "./AttachedFiles";
+
 const Formulary = ({
   identification,
   name,
   businessName,
   NIT,
   employees,
+  onOpenModal,
   status,
 }) => {
   return (
@@ -43,10 +46,7 @@ const Formulary = ({
         </p>
       </div>
       <div>
-        <label className={"text-sm opacity-70 block"}>Estado</label>
-        <p className={"font-bold text-base uppercase mb-14 border-b-2"}>
-          {status}
-        </p>
+        <AttachedFiles onOpenModal={onOpenModal} />
       </div>
     </div>
   );

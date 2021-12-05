@@ -14,7 +14,7 @@ const Card = ({ title, status, img, index }) => {
     <article
       onClick={handleClick}
       className={
-        "relative bg-white-pure card-shadow rounded-lg h-44 2xl:h-96 cursor-pointer"
+        "relative bg-white-pure card-shadow rounded-lg h-44 2xl:h-96 cursor-pointer transform hover:scale-105 transition duration-500 ease-in-out"
       }
     >
       <section className={""}>

@@ -1,15 +1,24 @@
 import axios from "axios";
+import { toast } from "react-toastify";
 
-const RejectButton = ({ setStatus, id }) => {
+const RejectButton = ({ id }) => {
   const rejectCompany = async () => {
+    toast.info("Empresa Rechazada", {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
     await axios.put(`http://localhost:8080/api/companies/${id}`, {
       status: "rejected",
     });
-    setStatus("rejected");
   };
   return (
     <button onClick={rejectCompany}>
-      <h1 className="font-bold text-lg bg-white-pure rounded-2xl card-shadow py-2 px-5 pr-8">
+      <h1 className="font-bold text-lg bg-white-pure rounded-2xl card-shadow py-2 px-5 pr-8 active:bg-gray-200">
         {" "}
         <span
           className={
