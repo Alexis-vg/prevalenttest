@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 import { CTAs, DataCompany } from "../components";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const AproveCompanies = () => {
   const [loading, setLoading] = useState(true);
@@ -26,10 +27,10 @@ const AproveCompanies = () => {
   }, [increment]);
   useEffect(async () => {
     setLoading(true);
-    const res = await axios.get("http://localhost:8080/api/companies");
-    setCompanies(res.data);
-    setCompany(res.data[0]);
-    setStatus(res.data[0].status);
+    const { data } = await axios.get("http://localhost:8080/api/companies");
+    setCompanies(data);
+    setCompany(data[0]);
+    setStatus(data[0].status);
     setLoading(false);
   }, []);
   if (loading) {
@@ -37,18 +38,27 @@ const AproveCompanies = () => {
   }
   return (
     <div>
-      <section className={"flex justify-between items-center my-9 mx-2"}>
-        <button
-          onClick={prevPage}
-          className={"w-10 h-10 bg-center bg-contain bg-prev-arrow-icon"}
-        />
-        <p>
-          Empresa {increment + 1} de {companies.length}
-        </p>
-        <button
-          onClick={nextPage}
-          className={"w-10 h-10 bg-center bg-contain bg-next-arrow-icon"}
-        />
+      <section className={""}>
+        <h1 className={"text-black text-sm my-9 ml-3"}>
+          <Link to="/" className={"text-blue-gdm text-sm"}>
+            Administración
+          </Link>{" "}
+          / Aprobación de Empresas
+        </h1>
+        <div className={"flex justify-between items-center my-9 mx-2"}>
+          <button
+            onClick={prevPage}
+            className={"w-9 h-9 bg-center bg-contain bg-prev-arrow-icon"}
+          />
+          <p className={"opacity-75 text-sm"}>
+            Empresa {increment + 1} de {companies.length} pendiente por
+            aprovación
+          </p>
+          <button
+            onClick={nextPage}
+            className={"w-9 h-9 bg-center bg-contain bg-next-arrow-icon"}
+          />
+        </div>
       </section>
       <DataCompany {...company} status={status} />
       <CTAs setStatus={setStatus} id={company._id} />
