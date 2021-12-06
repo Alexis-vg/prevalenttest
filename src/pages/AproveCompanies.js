@@ -27,7 +27,9 @@ const AproveCompanies = () => {
   }, [increment]);
   useEffect(async () => {
     setLoading(true);
-    const { data } = await axios.get("http://localhost:8080/api/companies");
+    const { data } = await axios.get(
+      "https://mighty-plains-82855.herokuapp.com/api/companies"
+    );
     setCompanies(data);
     setCompany(data[0]);
     setStatus(data[0].status);

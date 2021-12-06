@@ -12,9 +12,12 @@ const RejectButton = ({ id }) => {
       draggable: true,
       progress: undefined,
     });
-    await axios.put(`http://localhost:8080/api/companies/${id}`, {
-      status: "rejected",
-    });
+    await axios.put(
+      `https://mighty-plains-82855.herokuapp.com/api/companies/${id}`,
+      {
+        status: "rejected",
+      }
+    );
   };
   return (
     <button onClick={rejectCompany}>

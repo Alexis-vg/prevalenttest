@@ -13,9 +13,12 @@ const ApproveButton = ({ id }) => {
       draggable: true,
       progress: undefined,
     });
-    const res = await axios.put(`http://localhost:8080/api/companies/${id}`, {
-      status: "approved",
-    });
+    const res = await axios.put(
+      `https://mighty-plains-82855.herokuapp.com/api/companies/${id}`,
+      {
+        status: "approved",
+      }
+    );
     console.log(res);
   };
   return (
